@@ -85,7 +85,7 @@ Qualquer contribuição é bem-vinda. Sinta-se livre para abrir **issues** e **p
 ---
 
 ## Contato
-- **Autor:** Rafael Oliveira Lopes  
-- **E-mail:** [seu-email-aqui](mailto:seu-email-aqui)  
-- **LinkedIn:** [linkedin.com/in/rafael-lopes-desenvolvedor-fullstack/](https://www.linkedin.com/in/rafael-lopes-desenvolvedor-fullstack/)  
-- **Site:** [seu-site-aqui](https://seu-site-aqui)
+🔹 **Autor:** Rafael Oliveira Lopes  
+🔹 **Email:** rafaellopes.dev@email.com  
+🔹 **LinkedIn:** [LinkedIn](https://www.linkedin.com/in/rafael-lopes-desenvolvedor-fullstack/)  
+🔹 **Site:** [Meu site](https://rafaellopes.dev)  
