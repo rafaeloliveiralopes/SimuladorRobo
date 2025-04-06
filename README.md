@@ -1,8 +1,6 @@
-Segue uma versão revisada do README, posicionando o trecho “Com isso, o projeto demonstra…” logo depois de “Contribuição”:
-
----
-
 # Simulador de Robô
+
+> [English Version (en-US)](README.en.md)
 
 ## Sobre o Projeto
 Este projeto foi desenvolvido como parte dos estudos de Programação Orientada a Objetos (POO) em Java, da Unidade II, Aula II (Estruturas de Decisão, Controle e Repetição) do curso de Engenharia de Software. O objetivo principal é **simular** o funcionamento de um robô em um ambiente 2D, utilizando classes, objetos e estruturas de decisão/repetição para demonstrar conceitos básicos de POO.
