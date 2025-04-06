@@ -1,0 +1,26 @@
+# Build e arquivos de saída do Maven
+target/
+*.log
+
+# Arquivos de pacotes
+*.jar
+*.war
+*.ear
+
+# Classes compiladas
+*.class
+
+# Arquivos de configuração específicos de IDEs (Eclipse, IntelliJ, VSCode etc.)
+# Eclipse
+.project
+.classpath
+.settings/
+# IntelliJ
+.idea/
+*.iml
+# VSCode
+.vscode/
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
