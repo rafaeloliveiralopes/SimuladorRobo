@@ -1,15 +1,13 @@
 package com.roboproject;
 
+/**
+ * Classe que representa um robô e suas ações em um ambiente 2D.
+ */
 public class Robo {
 
     private int X;
     private int Y;
-    int orientacao;
-
-    public static final int FRENTE = 0;
-    public static final int TRAS = 1;
-    public static final int DIREITA = 2;
-    public static final int ESQUERDA = 3;
+    private Orientacao orientacao;
 
     // Construtor
     public Robo() {
@@ -17,33 +15,53 @@ public class Robo {
         this.X = 20;
         this.Y = 20;
         // Orientação inicial do robô
-        this.orientacao = FRENTE;
+        this.orientacao = Orientacao.FRENTE;
     }
 
+    /**
+     * Move o robô para as novas coordenadas (x, y).
+     */
     public void move(int novoX, int novoY) {
         this.X = novoX;
         this.Y = novoY;
     }
 
+    /**
+     * Exibe a posição atual do robô.
+     */
     public void printPosicao() {
         System.out.println("Posição atual do Robô: " + X + ", " + Y);
     }
 
+    /**
+     * Altera a orientação do robô baseada na tecla pressionada.
+     */
     public void setOrientacao(char tecla) {
-        if (tecla == 'w') {
-            this.orientacao = FRENTE;
-        } else if (tecla == 'a') {
-            this.orientacao = ESQUERDA;
-        } else if (tecla == 's') {
-            this.orientacao = DIREITA;
-        } else if (tecla == 'd') {
-            this.orientacao = TRAS;
-        } else {
-            System.out.println("Tecla inválida");
-        }
+      switch (tecla){
+          case 'w':
+              orientacao = Orientacao.FRENTE;
+              break;
+          case 'a':
+              orientacao = Orientacao.ESQUERDA;
+              break;
+          case 's':
+              orientacao = Orientacao.TRAS;
+              break;
+          case 'd':
+              orientacao = Orientacao.DIREITA;
+              break;
+          default:
+              try {
+                  throw new IllegalAccessException("Tecla inválida");
+              } catch (IllegalAccessException e) {
+                  throw new RuntimeException(e);
+              }
+      }
     }
-
-    public int getOrientacao() {
+    /**
+     * Retorna a orientação atual do robô.
+     */
+    public Orientacao getOrientacao(){
         return orientacao;
     }
 }
