@@ -51,11 +51,7 @@ public class Robo {
               orientacao = Orientacao.DIREITA;
               break;
           default:
-              try {
-                  throw new IllegalAccessException("Tecla inválida");
-              } catch (IllegalAccessException e) {
-                  throw new RuntimeException(e);
-              }
+              throw new IllegalArgumentException("Tecla inválida");
       }
     }
     /**
