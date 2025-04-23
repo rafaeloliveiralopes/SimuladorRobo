@@ -1,7 +1,21 @@
 
 package com.roboproject;
 
+/**
+ * Classe principal da aplicação responsável por interpretar os comandos passados via terminal
+ * e iniciar a execução do robô conforme solicitado.
+ *
+ * @author Rafael
+ * @version 1.0.0
+ */
+
 public class App {
+    /**
+     * Ponto de entrada da aplicação. Processa os argumentos de linha de comando e executa ações
+     * com base no comando informado.
+     *
+     * @param args os argumentos passados via terminal (ex: "--move w a s d")
+     */
     public static void main(String[] args) {
         if (args.length != 0) {
             String comando = args[0].toLowerCase();
