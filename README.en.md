@@ -1,100 +1,141 @@
+![Robot Project Banner](https://github.com/user-attachments/assets/4cfc9f99-497b-4120-9ee6-40d67677ed3e)
+
 # Robot Simulator
 
 > [Versão em Português (pt-BR)](README.md)
 
+---
+
 ## About the Project
 
-This project was developed as part of the Object-Oriented Programming (OOP) studies in Java, Unit II, Lesson II (Decision Structures, Control and Loops) from the Software Engineering course. The main goal is to **simulate** a robot operating in a 2D environment, using classes, objects, and decision/loop structures to demonstrate basic OOP concepts.
+This project was developed as part of the Object-Oriented Programming (OOP) module in Java, Unit II, Lesson II (Decision Structures, Control, and Loops) from the Software Engineering course. Its main goal is to simulate the operation of a robot in a 2D environment using classes, objects, and control structures to demonstrate fundamental OOP concepts.
+
+---
 
 ## Table of Contents
 
-1. [Technologies and Tools](#technologies-and-tools)
-2. [Project Goals](#project-goals)
-3. [Implemented Features](#implemented-features)
-4. [How to Run](#how-to-run)
-5. [Future Improvements](#future-improvements)
-6. [Contribution](#contribution)
-7. [Contact](#contact)
+- [Technologies and Tools](#technologies-and-tools)
+- [Project Goals](#project-goals)
+- [Implemented Features](#implemented-features)
+- [How to Run](#how-to-run)
+- [Interactive Mode](#interactive-mode)
+- [Future Improvements](#future-improvements)
+- [Conclusion](#conclusion)
+- [Contact](#contact)
 
 ---
 
 ## Technologies and Tools
 
-- **Java**: Version 17
-- **Maven**: Version 3.8.7 (or later)
-- **IDE**: Visual Studio Code
+- Java: Version 17
+- Maven: Version 3.8.7
+- IDE: IntelliJ IDEA
 
 ---
 
 ## Project Goals
 
-- **Practice Java OOP concepts**: creation of classes, objects, constructors, methods, and attributes.
-- **Model entities** (robot, box, 2D world), based on the assignment requirements.
-- **Simulate robot movements** in a square pattern, manipulating x and y coordinates.
-- **Demonstrate the use of decision structures** (`if/else`, `switch-case`) and nested loops (`for`).
+- Practice core OOP concepts in Java: creating classes, objects, constructors, methods, and attributes.
+- Model entities (robot, box, 2D world) as described in the project prompt.
+- Simulate robot movement on a two-dimensional plane by manipulating x and y coordinates.
+- Demonstrate the use of control structures (`if/else`, `switch-case`) and loops (`while`, `for`).
 
 ---
 
 ## Implemented Features
 
-1. **Mundo2D Class**
+### 🔹 `Mundo2D` Class
+- Represents the environment where the robot moves, with x and y dimensions.
 
-   - [x] Represents the "room" or environment where the robot moves, with x and y dimensions.
+### 🔹 `Caixa` Class
+- Models boxes in the environment, including attributes such as name, quantity, and physical dimensions (height, width, weight, etc.).
 
-2. **Caixa (Box) Class**
+### 🔹 `Robo` Class
+- Robot with position (x, y), orientation (`FRENTE`, `TRAS`, `DIREITA`, `ESQUERDA`), speed, traction type, and cargo.
+- Methods for movement and position display.
+- Implements keyboard-based movement logic.
 
-   - [x] Models boxes in the environment, including attributes such as item name, quantity, and dimensions (height, width, weight, etc.).
-
-3. **Robo (Robot) Class**
-
-   - [x] Contains position (X, Y) and orientation (FRONT, BACK, RIGHT, LEFT).
-   - [x] Includes a method to move (`move(int, int)`) and print the current position (`printPosicao()`).
-   - [x] Uses decision structures to adjust orientation based on keyboard input (w, a, s, d).
-
-4. **App (main) Class**
-   - [x] Contains two nested `for` loops, controlling direction and number of steps the robot takes.
-   - [x] Uses `switch-case` to move the robot along the (x, y) axes, forming a square path.
+### 🔹 `App` Class (main)
+- Interprets command-line arguments (`--help`, `--author`, etc.).
+- Includes an **interactive mode**, activated with `--move`, enabling real-time keyboard control of the robot.
 
 ---
 
 ## How to Run
 
-1. **Clone or download** this repository:
-   ```bash
-   git clone https://github.com/rafaeloliveiralopes/SimuladorRobo.git
-   cd SimuladorRobo
-   ```
-2. **Build** the project using Maven or a compatible Java IDE.
-   - Example using Maven in the terminal:
-     ```bash
-     mvn clean install
-     mvn exec:java -Dexec.mainClass="com.roboproject.App"
-     ```
-3. **Observe the output** in the console, checking the robot's position at each movement step.
+### 🔹 Clone the repository:
+```bash
+git clone https://github.com/rafaeloliveiralopes/SimuladorRobo.git
+cd SimuladorRobo
+```
+
+### 🔹 Compile with Maven:
+```bash
+mvn clean compile
+```
+
+### 🔹 Run with arguments:
+```bash
+# Display the author's name
+java -cp target/classes com.roboproject.App --author
+
+# Display available commands
+java -cp target/classes com.roboproject.App --help
+```
+
+---
+
+## Interactive Mode
+
+### 🔹 Start interactive mode:
+```bash
+java -cp target/classes com.roboproject.App --move
+```
+
+### 🔹 Available commands in interactive mode:
+- `w` → move the robot forward
+- `a` → move the robot left
+- `s` → move the robot backward
+- `d` → move the robot right
+- `1` → display the robot's current position
+- `0` → exit the program
+
+### 🧠 Tip:
+Interactive mode allows real-time control and simulation of robot movement. The robot's position is updated after each command input.
 
 ---
 
 ## Future Improvements
 
-- [ ] **Effective integration between orientation and movement**: Instead of absolute coordinates in `App.java`, the robot could use its constants (FRONT, BACK, etc.) to automatically update `X` and `Y`.
-- [ ] **Limit movement to Mundo2D**: Prevent the robot from exceeding the defined boundaries of the environment.
-- [ ] **Object interaction**: Create methods for the robot to detect and interact with boxes (e.g., pick up an item or display box data).
-- [ ] **User input**: Allow real-time orientation control by collecting keyboard input within `main` or via a graphical interface.
-- [ ] **Unit Tests**: Add unit tests to validate the `Robo`, `Caixa`, and `Mundo2D` classes.
+- **Limit movement within the 2D world**: prevent the robot from exceeding defined boundaries.
+- **Box collision detection**: enable the robot to interact with objects in the environment.
+- **Graphical user interface (GUI)** for visual representation of movements.
+- **Unit testing (JUnit)** to validate the behavior of classes.
 
 ---
 
-## Contribution
+## Conclusion
 
-This project **demonstrates the use of OOP in Java** in a clear and educational way, serving as a starting point for more complex projects in the future.
+This project is a practical application of core **Object-Oriented Programming (OOP)** principles in Java, aligned with the topics covered in the academic module:
 
-All contributions are welcome. Feel free to open **issues** and **pull requests** with suggestions for improvements or corrections.
+- **Creation and use of classes and objects** (`Robo`, `Caixa`, `Mundo2D`);
+- **Encapsulation of attributes and methods** using getters and setters;
+- **Inheritance and abstraction** through the abstract classes `RoboIdeia` and `CaixaIdeia`;
+- **Use of enums** to represent constant values (`Orientacao`);
+- **Method overriding (`@Override`)** and polymorphism;
+- **Constructor overloading** for reuse and specialization;
+- **Control structures** (`if`, `switch-case`, `while`);
+- **User input with `Scanner`** for interactive keyboard control;
+- **Formatted output with `System.out.printf`** for readable status display;
+- **Input validation and exception handling** (`IllegalArgumentException`).
+
+The project is modular, reusable, and extensible. Future features such as graphics, collision detection, and test automation can be easily integrated.
 
 ---
 
 ## Contact
+🔹 **Author:** Rafael Oliveira Lopes  
+🔹 **Email:** rafaellopes.dev@email.com  
+🔹 **LinkedIn:** [LinkedIn](https://www.linkedin.com/in/rafael-lopes-desenvolvedor-fullstack/)  
+🔹 **Website:** [rafaellopes.dev](https://rafaellopes.dev)
 
-🔹 **Author**: Rafael Oliveira Lopes  
-🔹 **Email**: rafaellopes.dev@email.com  
-🔹 **LinkedIn**: [linkedin.com/in/rafael-lopes-desenvolvedor-fullstack/](https://www.linkedin.com/in/rafael-lopes-desenvolvedor-fullstack/)  
-🔹 **Website**: [rafaellopes.dev](https://rafaellopes.dev)
