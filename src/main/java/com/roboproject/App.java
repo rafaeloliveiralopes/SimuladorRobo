@@ -47,6 +47,7 @@ public class App {
                     System.out.println("\ta: move o robô para esquerda");
                     System.out.println("\td: move o robô para direita");
                     System.out.println("\ts: move o robô para trás");
+                    System.out.println("\t1: mostra a posição atualizada do robô");
                     System.out.println("\t0: sai da aplicação");
                     break;
                 case "--move":
