@@ -1,86 +1,138 @@
+
+![Robot Project Banner](https://github.com/user-attachments/assets/4cfc9f99-497b-4120-9ee6-40d67677ed3e)
+
 # Simulador de Robô
 
 > [English Version (en-US)](README.en.md)
 
-## Sobre o Projeto
-Este projeto foi desenvolvido como parte dos estudos de Programação Orientada a Objetos (POO) em Java, da Unidade II, Aula II (Estruturas de Decisão, Controle e Repetição) do curso de Engenharia de Software. O objetivo principal é **simular** o funcionamento de um robô em um ambiente 2D, utilizando classes, objetos e estruturas de decisão/repetição para demonstrar conceitos básicos de POO.
+---
 
-## Índice
-1. [Tecnologias e Ferramentas](#tecnologias-e-ferramentas)  
-2. [Objetivo do Projeto](#objetivo-do-projeto)  
-3. [Funcionalidades Implementadas](#funcionalidades-implementadas)  
-4. [Como Executar](#como-executar)  
-5. [Futuras Melhorias](#futuras-melhorias)  
-6. [Contribuição](#contribuição)  
-7. [Contato](#contato)
+## Sobre o Projeto
+
+Este projeto foi desenvolvido como parte dos estudos de Programação Orientada a Objetos (POO) em Java, da Unidade II, Aula II (Estruturas de Decisão, Controle e Repetição) do curso de Engenharia de Software. O objetivo principal é simular o funcionamento de um robô em um ambiente 2D, utilizando classes, objetos e estruturas de decisão/repetição para demonstrar conceitos básicos de POO.
 
 ---
 
-## Tecnologias e Ferramentas
-- **Java**: Versão 17  
-- **Maven**: Versão 3.8.7 (ou superior)  
-- **IDE**: Visual Studio Code  
+## Índice
+
+- [Tecnologias e Ferramentas](#tecnologias-e-ferramentas)
+- [Objetivo do Projeto](#objetivo-do-projeto)
+- [Funcionalidades Implementadas](#funcionalidades-implementadas)
+- [Como Executar](#como-executar)
+- [Modo Interativo](#modo-interativo)
+- [Futuras Melhorias](#futuras-melhorias)
+- [Contribuição](#contribuição)
+- [Contato](#contato)
+
+---
+
+## Tecnologias e Ferramentas Utilizadas
+
+- Java: Versão 17
+- Maven: Versão 3.8.7
+- IDE: IntelliJ IDEA
 
 ---
 
 ## Objetivo do Projeto
-- **Praticar conceitos de POO em Java**: criação de classes, objetos, construtores, métodos e atributos.  
-- **Modelar entidades** (robô, caixa, mundo 2D), conforme o enunciado da atividade.  
-- **Simular movimentos** do robô em formato de quadrado, manipulando coordenadas x e y.  
-- **Demonstrar uso de estruturas de decisão** (`if/else`, `switch-case`) e laços de repetição aninhados (`for`).  
+
+- Praticar conceitos de POO em Java: criação de classes, objetos, construtores, métodos e atributos.
+- Modelar entidades (robô, caixa, mundo 2D), conforme o enunciado da atividade.
+- Simular movimentos do robô em um plano bidimensional, manipulando coordenadas x e y.
+- Demonstrar o uso de estruturas de decisão (`if/else`, `switch-case`) e laços de repetição (`while`, `for`).
 
 ---
 
 ## Funcionalidades Implementadas
 
-1. **Classe Mundo2D**  
-   - [x] Representa a “sala” ou ambiente em que o robô se move, com dimensões x e y.
+### 🔹 Classe `Mundo2D`
+- Representa o ambiente em que o robô se move, com dimensões x e y.
 
-2. **Classe Caixa**  
-   - [x] Modela caixas no ambiente, incluindo atributos como nome do item, quantidade e dimensões (altura, largura, peso, etc.).
+### 🔹 Classe `Caixa`
+- Modela caixas no ambiente, com atributos como nome, quantidade e dimensões (altura, largura, peso, etc.).
 
-3. **Classe Robo**  
-   - [x] Possui posição (X, Y) e orientação (FRENTE, TRAS, DIREITA, ESQUERDA).  
-   - [x] Método para movimentar-se (`move(int, int)`) e imprimir a posição (`printPosicao()`).  
-   - [x] Estrutura de decisão para ajustar a orientação com base em entradas de teclado (w, a, s, d).
+### 🔹 Classe `Robo`
+- Robô com posição (x, y), orientação (`FRENTE`, `TRAS`, `DIREITA`, `ESQUERDA`), velocidade, tração e carga.
+- Métodos para movimentação e exibição de posição.
+- Implementa lógica de movimento com base em entradas do teclado.
 
-4. **Classe App (main)**  
-   - [x] Contém dois laços `for` aninhados, controlando a direção e a quantidade de passos do robô.  
-   - [x] Usa `switch-case` para deslocar o robô nos eixos (x, y), formando um quadrado.
+### 🔹 Classe `App` (main)
+- Interpreta comandos da linha de comando (`--help`, `--author`, etc.).
+- Possui **modo interativo**, acionado com `--move`, permitindo controle do robô em tempo real pelo teclado.
 
 ---
 
 ## Como Executar
 
-1. **Clonar ou baixar** este repositório:
-   ```bash
-   git clone https://github.com/rafaeloliveiralopes/SimuladorRobo.git
-   cd SimuladorRobo
-   ```
-2. **Compilar** utilizando Maven ou uma IDE Java compatível.  
-   - Exemplo com Maven no terminal:
-     ```bash
-     mvn clean install
-     mvn exec:java -Dexec.mainClass="com.roboproject.App"
-     ```
-3. **Observar a saída** no console, conferindo as posições do robô em cada etapa do movimento.
+### 🔹 Clonar o repositório:
+```bash
+git clone https://github.com/rafaeloliveiralopes/SimuladorRobo.git
+cd SimuladorRobo
+```
+
+### 🔹 Compilar com Maven:
+```bash
+mvn clean compile
+```
+
+### 🔹 Executar com argumentos:
+```bash
+# Exibe o autor
+java -cp target/classes com.roboproject.App --author
+
+# Exibe os comandos disponíveis
+java -cp target/classes com.roboproject.App --help
+```
+
+---
+
+## Modo Interativo
+
+### 🔹 Iniciar o modo interativo:
+```bash
+java -cp target/classes com.roboproject.App --move
+```
+
+### 🔹 Comandos disponíveis no modo interativo:
+- `w` → move o robô para frente
+- `a` → move o robô para esquerda
+- `s` → move o robô para trás
+- `d` → move o robô para direita
+- `1` → mostra a posição atual do robô
+- `0` → encerra o programa
+
+### 🧠 Dica:
+O modo interativo permite simular os movimentos do robô em tempo real, atualizando sua posição após cada entrada de comando.
 
 ---
 
 ## Futuras Melhorias
 
-- [ ] **Integração efetiva entre orientação e movimento**: Em vez de coordenadas absolutas no `App.java`, o robô pode usar suas constantes (FRENTE, TRAS, etc.) para atualizar `X` e `Y` automaticamente.  
-- [ ] **Limitar movimento ao Mundo2D**: Fazer com que o robô não ultrapasse as dimensões definidas no ambiente.  
-- [ ] **Interação com objetos**: Criar métodos para o robô detectar e interagir com as caixas (por exemplo, pegar um item ou exibir dados da caixa).  
-- [ ] **Entrada do usuário**: Permitir que o usuário controle a orientação do robô em tempo real (coletando dados via teclado dentro do `main` ou de uma interface gráfica).  
-- [ ] **Testes Unitários**: Adicionar testes de unidade para validar as classes `Robo`, `Caixa` e `Mundo2D`.
+- **Limitação de movimento ao Mundo2D**: evitar que o robô ultrapasse os limites do ambiente.
+- **Detecção de colisão com caixas**: permitir interação entre robô e objetos no cenário.
+- **Interface gráfica (GUI)** para visualização dos movimentos.
+- **Teste de unidades (JUnit)** para garantir o funcionamento das classes.
 
 ---
 
 ## Contribuição
-Com isso, o projeto **demonstra o uso de POO em Java** de forma clara e didática, servindo como um ponto de partida para outros projetos mais complexos no futuro.
 
-Qualquer contribuição é bem-vinda. Sinta-se livre para abrir **issues** e **pull requests** com sugestões de melhorias ou correções.
+Este projeto é uma aplicação prática dos principais conceitos de **Programação Orientada a Objetos (POO)** com Java, com base nos tópicos estudados no módulo:
+
+- **Criação e uso de classes e objetos** (`Robo`, `Caixa`, `Mundo2D`);
+- **Encapsulamento de atributos e métodos**, com uso de `getters` e `setters`;
+- **Herança e abstração**, por meio das classes abstratas `RoboIdeia` e `CaixaIdeia`;
+- **Uso de enums** para representar constantes (`Orientacao`);
+- **Sobrescrita de métodos (`@Override`)** e uso de polimorfismo;
+- **Construtores com sobrecarga**, demonstrando reutilização e especialização;
+- **Controle de fluxo com estruturas `if`, `switch-case` e `while`**;
+- **Leitura de entrada do usuário com `Scanner` para controle interativo via teclado**;
+- **Formatação de saída com `System.out.printf` para exibir status formatado**;
+- **Validação de argumentos e uso de exceções (`IllegalArgumentException`)**.
+
+Além disso, o projeto pode ser expandido com novas funcionalidades como gráficos, colisões e testes unitários.
+
+Sinta-se à vontade para contribuir com ideias, melhorias ou correções por meio de issues ou pull requests.
 
 ---
 
@@ -89,3 +141,4 @@ Qualquer contribuição é bem-vinda. Sinta-se livre para abrir **issues** e **p
 🔹 **Email:** rafaellopes.dev@email.com  
 🔹 **LinkedIn:** [LinkedIn](https://www.linkedin.com/in/rafael-lopes-desenvolvedor-fullstack/)  
 🔹 **Site:** [Meu site](https://rafaellopes.dev)  
+
