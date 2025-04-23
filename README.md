@@ -115,7 +115,7 @@ O modo interativo permite simular os movimentos do robô em tempo real, atualiza
 
 ---
 
-## Contribuição
+## Conclusão
 
 Este projeto é uma aplicação prática dos principais conceitos de **Programação Orientada a Objetos (POO)** com Java, com base nos tópicos estudados no módulo:
 
@@ -132,13 +132,11 @@ Este projeto é uma aplicação prática dos principais conceitos de **Programa�
 
 Além disso, o projeto pode ser expandido com novas funcionalidades como gráficos, colisões e testes unitários.
 
-Sinta-se à vontade para contribuir com ideias, melhorias ou correções por meio de issues ou pull requests.
-
 ---
 
 ## Contato
 🔹 **Autor:** Rafael Oliveira Lopes  
 🔹 **Email:** rafaellopes.dev@email.com  
 🔹 **LinkedIn:** [LinkedIn](https://www.linkedin.com/in/rafael-lopes-desenvolvedor-fullstack/)  
-🔹 **Site:** [Meu site](https://rafaellopes.dev)  
+🔹 **Site:** [rafaellopes.dev](https://rafaellopes.dev)  
 
