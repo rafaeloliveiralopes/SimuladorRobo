@@ -4,9 +4,9 @@ package com.roboproject;
  * Classe abstrata que representa a ideia de uma caixa em um ambiente 2D.
  * Define atributos e comportamentos genéricos que serão compartilhados
  * por todas as classes concretas que estendem essa abstração.
- *
+
  * As caixas possuem posição, peso e dimensões fixas (comprimento, largura, altura).
- *
+
  * @author Rafael
  * @version 1.0
  */
